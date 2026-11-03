@@ -8,8 +8,17 @@ int main(int argc,char *argv[])
         return FAILURE;
     }
     F_node *head = NULL;
+    HashTable HT_arr;
+    initializeHashTable(&HT_arr);
 
     validate_files(argc, argv, &head);
+    F_node *temp=head;
+    printf("inserted file: \n");
+    while(temp!=NULL)
+    {
+        printf("%s -> ",temp->f_name);
+        temp=temp->link;
+    }
    
     int ch;
     do
@@ -35,6 +44,7 @@ int main(int argc,char *argv[])
         {
             case 1:
                 // Create Database
+                Create_database(&HT_arr,head);
                 break;
 
             case 2:

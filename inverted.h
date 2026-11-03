@@ -45,6 +45,8 @@ int insert_last(F_node **head, char *filename);
 int isExist(char *filename);
 
 //creat data base
-void Create_database(HashTable *HT_arr, F_node *head);
+int Create_database(HashTable *HT_arr, F_node *head);
+void initializeHashTable(HashTable *HT_arr);
+int get_index(char *word);
 
 #endif

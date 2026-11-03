@@ -18,7 +18,8 @@ int get_index(char *word)
     else
         return 26;
 }
-int Creat_database(HashTable *HT_arr, F_node *head)
+
+int Create_database(HashTable *HT_arr, F_node *head)
 {
     FILE *fp;
     char word[50];

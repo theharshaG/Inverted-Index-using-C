@@ -86,34 +86,34 @@ void validate_files(int argc, char *argv[], F_node **head)
     {
         if (check_extension(argv[i]) == FAILURE)
         {
-            printf("%s: Invalid extension\n", argv[i]);
+            printf(RED"%s: Invalid extension\n" RESET, argv[i]);
             continue;
         }
 
         if (check_duplicates(*head, argv[i]) == FAILURE)
         {
-            printf("%s: Duplicate file\n", argv[i]);
+            printf(GREEN "%s :" RED" Duplicate file\n" RESET,argv[i]);
             continue;
         }
 
         if (isExist(argv[i]) == FAILURE)
         {
-            printf("%s: File does not exist or cannot be opened\n", argv[i]);
+            printf(GREEN "%s : "RED "File does not exist or cannot be opened\n" RESET,argv[i]);
             continue;
         }
 
         if (isEmpty(argv[i]) == FAILURE)
         {
-            printf("%s: File is empty\n", argv[i]);
+            printf(GREEN "%s : "RED "File is empty\n"RESET,argv[i]);
             continue;
         }
 
         if (insert_last(head, argv[i]) == FAILURE)
         {
-            printf("Memory allocation failed\n");
+            printf(RED "Memory allocation failed\n"RESET);
             continue;
         }
 
-        printf("%s: File accepted\n", argv[i]);
+        printf(BLUE "%s: File Accepted\n"RESET,argv[i]);
     }
 }

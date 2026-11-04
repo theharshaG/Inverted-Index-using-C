@@ -3,8 +3,8 @@ int main(int argc,char *argv[])
 {
     if (argc < 2)
     {
-        printf("Error: Insufficient arguments.\n");
-        printf("Usage: %s <file1.txt> <file2.txt> ...\n", argv[0]);
+        printf(RED"Error: Insufficient arguments.\n"RESET);
+        printf(RED "Usage: " GREEN "%s" RED " <file1.txt> <file2.txt> ...\n" RESET, argv[0]);        
         return FAILURE;
     }
     F_node *head = NULL;
@@ -13,10 +13,10 @@ int main(int argc,char *argv[])
 
     validate_files(argc, argv, &head);
     F_node *temp=head;
-    printf("inserted file: \n");
+    printf(BLUE"\nInserted File: \n"RESET);
     while(temp!=NULL)
     {
-        printf("%s -> ",temp->f_name);
+        printf(BLUE"%s -> "RESET,temp->f_name);
         temp=temp->link;
     }
    
@@ -24,33 +24,34 @@ int main(int argc,char *argv[])
     do
     {
         printf("\n========================================\n");
-        printf("         INVERTED SEARCH MENU           \n");
+        printf(GRAY"         INVERTED SEARCH MENU           \n"RESET);
         printf("========================================\n");
-        printf("1. Create Database\n");
+        printf(GRAY"1. Create Database\n");
         printf("2. Display Database\n");
         printf("3. Search Database\n");
         printf("4. Save Database\n");
         printf("5. Update Database\n");
-        printf("6. Exit\n");
-        printf("\nEnter your choice: ");
+        printf("6. Exit\n"RESET);
+        printf(BLUE"\nEnter your choice: "RESET);
 
         if(scanf("%d",&ch)!=1)
         {
-            printf("Invalid input. Please enter a valid number.\n");
+            printf(RED"Invalid input. Please enter a valid number.\n"RESET);
             while(getchar()!='\n');
             continue;
         }
+        printf("\n");
         switch(ch)
         {
             case 1:
                 // Create Database
                 if(create_database(&HT_arr,head)==SUCCESS)
                 {
-                    printf("Data base created\n");
+                    printf(GREEN"DataBase Created!!"RESET);
                 }
                 else
                 {
-                    printf("Failed to create data base\n");
+                    printf(RED"Failed to create data base\n"RESET);
                 }
                 break;
 
@@ -61,6 +62,7 @@ int main(int argc,char *argv[])
 
             case 3:
                 // Search Database
+                search(&HT_arr);
                 break;
 
             case 4:
@@ -72,11 +74,11 @@ int main(int argc,char *argv[])
                 break;
 
             case 6:
-                printf("Exiting Inverted Search...\n");
+                printf(RED"Exiting Inverted Search...\n"RESET);
                 break;
 
             default:
-                printf("Invalid choice.\n");
+                printf(RED"Invalid choice.\n"RESET);
         }
     } while (ch!=6);
     

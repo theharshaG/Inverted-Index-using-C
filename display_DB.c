@@ -2,15 +2,13 @@
 
 void display_database(HashTable *HT_arr)
 {
-    printf("\n");
-    printf("%-8s %-15s %-15s %-15s %-10s\n",
-           "-----", "----", "---------", "----------", "---------");
+    printf(GREEN"%40s\n","[---DATABASE---]");
+    printf("--------------------------------------------------------------------\n");
 
-    printf("%-8s %-15s %-15s %-15s %-10s\n",
+    printf("%-8s %-15s %-15s %-15s %-8s\n",
            "Index", "Word", "Filecount", "Files Name", "Wordcount");
 
-    printf("%-8s %-15s %-15s %-15s %-10s\n",
-           "-----", "----", "---------", "----------", "---------");
+    printf("--------------------------------------------------------------------\n");
     for(int i = 0; i < HASH_SIZE; i++)
     {
         MainNode *temp = HT_arr->table[i];
@@ -23,8 +21,7 @@ void display_database(HashTable *HT_arr)
 
             while(sub_temp != NULL)
             {
-                printf(" %-15s %-10d", sub_temp->filename,
-                                 sub_temp->word_count);
+                printf("%-15s %-10d",sub_temp->filename,sub_temp->word_count);
 
                 sub_temp = sub_temp->sub_link;
             }
@@ -34,4 +31,5 @@ void display_database(HashTable *HT_arr)
             temp = temp->main_link;
         }
     }
+    printf(RESET);
 }

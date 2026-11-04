@@ -6,6 +6,15 @@
 #include <string.h>
 #include <ctype.h>
 
+// Color Macros
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define GRAY    "\033[90m"
+#define RESET   "\033[0m"
+
 #define SUCCESS 1
 #define FAILURE 0
 
@@ -50,5 +59,7 @@ void initializeHashTable(HashTable *HT_arr);
 int get_index(char *word);
 
 void display_database(HashTable *HT_arr);
+
+void search(HashTable *HT_arr);
 
 #endif

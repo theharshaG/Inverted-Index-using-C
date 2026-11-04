@@ -32,7 +32,7 @@ int main(int argc,char *argv[])
         printf("4. Save Database\n");
         printf("5. Update Database\n");
         printf("6. Exit\n");
-        printf("Enter your choice: ");
+        printf("\nEnter your choice: ");
 
         if(scanf("%d",&ch)!=1)
         {
@@ -44,11 +44,19 @@ int main(int argc,char *argv[])
         {
             case 1:
                 // Create Database
-                Create_database(&HT_arr,head);
+                if(create_database(&HT_arr,head)==SUCCESS)
+                {
+                    printf("Data base created\n");
+                }
+                else
+                {
+                    printf("Failed to create data base\n");
+                }
                 break;
 
             case 2:
                 // Display Database
+                display_database(&HT_arr);
                 break;
 
             case 3:

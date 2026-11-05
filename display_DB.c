@@ -1,7 +1,25 @@
 #include "inverted.h"
 
+int is_database_empty(HashTable *HT_arr)
+{
+    for(int i = 0; i < HASH_SIZE; i++)
+    {
+        if(HT_arr->table[i] != NULL)
+        {
+            return SUCCESS;
+        }
+    }
+
+    return FAILURE;
+}
+
 void display_database(HashTable *HT_arr)
 {
+    if(HT_arr == NULL || is_database_empty(HT_arr) == FAILURE)
+    {
+        printf(RED"INFO: Data Base Empty []\n"RESET);
+        return;
+    }
     printf(GREEN"%40s\n","[---DATABASE---]");
     printf("--------------------------------------------------------------------\n");
 

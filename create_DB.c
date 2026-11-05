@@ -187,6 +187,6 @@ int create_database(HashTable *HT_arr, F_node *head)
         // Move to next filename
         head = head->link;
     }
-
+    
     return SUCCESS;
 }

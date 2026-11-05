@@ -20,6 +20,7 @@ int main(int argc,char *argv[])
         temp=temp->link;
     }
    
+    int flag=0;
     int ch;
     do
     {
@@ -36,7 +37,7 @@ int main(int argc,char *argv[])
 
         if(scanf("%d",&ch)!=1)
         {
-            printf(RED"Invalid input. Please enter a valid number.\n"RESET);
+            printf(RED"ERROR: Invalid input.Please enter a valid number.\n"RESET);
             while(getchar()!='\n');
             continue;
         }
@@ -45,13 +46,21 @@ int main(int argc,char *argv[])
         {
             case 1:
                 // Create Database
-                if(create_database(&HT_arr,head)==SUCCESS)
+                if(flag==0)
                 {
-                    printf(GREEN"DataBase Created!!"RESET);
+                    if(create_database(&HT_arr,head)==SUCCESS)
+                    {
+                        printf(GREEN"INFO: DataBase Created!!"RESET);
+                        flag=1;
+                    }
+                    else
+                    {
+                        printf(RED"ERROR: Failed to create data base\n"RESET);
+                    }
                 }
                 else
                 {
-                    printf(RED"Failed to create data base\n"RESET);
+                    printf(GREEN"INFO: Data Base Already Created..\n"RESET);
                 }
                 break;
 
@@ -67,10 +76,12 @@ int main(int argc,char *argv[])
 
             case 4:
                 // Save Database
+                save_database(&HT_arr);
                 break;
 
             case 5:
                 // Update Database
+                //update_db(HT_arr);
                 break;
 
             case 6:
@@ -78,7 +89,7 @@ int main(int argc,char *argv[])
                 break;
 
             default:
-                printf(RED"Invalid choice.\n"RESET);
+                printf(RED"ERROR: Invalid choice.\n"RESET);
         }
     } while (ch!=6);
     

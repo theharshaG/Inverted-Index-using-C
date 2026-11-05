@@ -62,4 +62,8 @@ void display_database(HashTable *HT_arr);
 
 void search(HashTable *HT_arr);
 
+void save_database(HashTable *HT_arr);
+
+void update_db(HashTable *HT_arr);
+
 #endif

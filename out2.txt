@@ -1,6 +1,0 @@
-#1       ; bye            ; 1              ; text2.txt       ;1         #
-#4       ; everyone       ; 2              ; file1.txt       ;1         ##4       ; everyone       ; 2              ; text1.txt       ;1         #
-#7       ; hii            ; 3              ; file1.txt       ;1         ##7       ; hii            ; 3              ; text1.txt       ;1         ##7       ; hii            ; 3              ; text2.txt       ;1         #
-#7       ; hi             ; 1              ; file2.txt       ;1         #
-#7       ; hello          ; 3              ; file2.txt       ;1         ##7       ; hello          ; 3              ; text1.txt       ;1         ##7       ; hello          ; 3              ; text2.txt       ;1         #
-#18      ; sen            ; 1              ; text2.txt       ;1         #

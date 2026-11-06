@@ -1,0 +1,35 @@
+#1
+WORD: bye
+FILECOUNT: 1
+FILE: text2.txt  WORDCOUNT: 1
+#
+#4
+WORD: everyone
+FILECOUNT: 2
+FILE: file1.txt  WORDCOUNT: 1
+FILE: text1.txt  WORDCOUNT: 1
+#
+#7
+WORD: hii
+FILECOUNT: 3
+FILE: file1.txt  WORDCOUNT: 2
+FILE: text1.txt  WORDCOUNT: 1
+FILE: text2.txt  WORDCOUNT: 1
+#
+#7
+WORD: hi
+FILECOUNT: 1
+FILE: file2.txt  WORDCOUNT: 1
+#
+#7
+WORD: hello
+FILECOUNT: 3
+FILE: file2.txt  WORDCOUNT: 1
+FILE: text1.txt  WORDCOUNT: 1
+FILE: text2.txt  WORDCOUNT: 1
+#
+#18
+WORD: sen
+FILECOUNT: 1
+FILE: text2.txt  WORDCOUNT: 1
+#

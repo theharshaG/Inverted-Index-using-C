@@ -81,11 +81,15 @@ int main(int argc,char *argv[])
 
             case 5:
                 // Update Database
-                //update_db(HT_arr);
+                update_db(&HT_arr);
                 break;
 
             case 6:
                 printf(RED"Exiting Inverted Search...\n"RESET);
+                  // 1. Free all MainNodes and SubNodes in the hash table
+                free_database(&HT_arr);
+                // 2. Free all file nodes in the validated file list
+                free_file_list(&head);
                 break;
 
             default:

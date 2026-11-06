@@ -2,10 +2,21 @@
 
 void search(HashTable *HT_arr)
 {
-    char word[20];
+    if(HT_arr == NULL || is_database_empty(HT_arr) == FAILURE)
+    {
+        printf(RED"INFO: Data Base Empty []\n"RESET);
+        return;
+    }
+    char word[50];
 
     printf("Enter word to search: ");
     scanf("%19s", word);
+
+    // Convert string to lowercase character by character
+    for (int i = 0; word[i] != '\0'; i++)
+    {
+        word[i] = tolower((unsigned char)word[i]);
+    }
 
     int index = get_index(word);
 

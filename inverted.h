@@ -22,7 +22,7 @@
 
 typedef struct file //single linked list
 {
-    char f_name[20]; // stores the filenames
+    char f_name[64]; // stores the filenames
     struct file *link; //points to the next file node
 }F_node;
 
@@ -52,6 +52,7 @@ int check_extension(char *filename);
 int check_duplicates(F_node *head, char *filename);
 int insert_last(F_node **head, char *filename);
 int isExist(char *filename);
+int isEmpty(char *filename);
 
 //creat data base
 int create_database(HashTable *HT_arr, F_node *head);
@@ -59,11 +60,15 @@ void initializeHashTable(HashTable *HT_arr);
 int get_index(char *word);
 
 void display_database(HashTable *HT_arr);
+int is_database_empty(HashTable *HT_arr);
 
 void search(HashTable *HT_arr);
 
 void save_database(HashTable *HT_arr);
 
-void update_db(HashTable *HT_arr);
+int update_db(HashTable *HT_arr);
+
+void free_database(HashTable *HT_arr);
+void free_file_list(F_node **head);
 
 #endif
